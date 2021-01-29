@@ -1,0 +1,43 @@
+.ude-carousel{
+    background-image: url(../images/cover.jpg);
+    height:500px;
+    background-position: center;
+    .carousel-sidebar{
+        padding-left: 50px;
+        .carousel-content{
+            max-width:460px;
+            .carousel-title{
+                @include styleText($color-white-0, $fs-4, $fw-bold-1);
+                line-height: 1.33;
+            }
+            .carousel-text{
+                @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+                margin: $fs-1 0;
+            }
+            .input-group{
+                .form-control{
+                    border-radius: 0;
+                    background-clip: border-box;
+                    height:50px;
+                }
+                .input-group-text{
+                    border-radius: 0;
+                    font-size: $fs-2;
+                    padding: $pd-1 +1 $pd-1 +4;
+                }
+            }
+        }
+    }
+}
+// Reponsive
+@include reponsive('medium'){
+    .ude-carousel{
+
+        .carousel-sidebar{
+            padding-left: 20px;
+            .carousel-content{
+                max-width:350px;
+            }
+        }
+    }
+}

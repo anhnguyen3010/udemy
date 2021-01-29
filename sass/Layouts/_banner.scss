@@ -1,0 +1,61 @@
+.ude-banner {
+    background-color: $color-black-0;
+
+    .banner-line {
+        margin: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(to right, #701b52, #e75052);
+    }
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .banner-content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            h3 {
+                @include styleText($color-white-0, $fs-3, $fw-bold-1);
+                margin: 0;
+            }
+            span {
+                margin:20px 0 35px;
+                @include styleText($color-gray-5, $fs-0, $fw-normal);
+            }
+            .ude-btnRed {
+                text-decoration: none;
+                text-align: center;
+                &:hover {
+                    border-color: $color-red-1;
+                }
+            }
+        }
+        .banner-icon {
+            @include styleText($color-white-0, $fs-4 - 8, $fw-bold-0);
+            align-self: center;
+            text-align: center;
+            padding: 48px 0 32px;
+        }
+        .fa.fa-id-card-alt {
+            padding-left: 14%;
+        }
+        .fa.fa-laptop {
+            padding-right: 14%;
+        }
+    }
+}
+// reponsive
+@include reponsive("large") {
+    .ude-banner {
+        .banner {
+            .banner-icon {
+                display: none;
+            }
+            .banner-content {
+                padding: 100px 0;
+                margin: auto;
+            }
+        }
+    }
+}

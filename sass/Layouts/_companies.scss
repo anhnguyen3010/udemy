@@ -1,0 +1,44 @@
+.ude-partners{
+    background-color: $color-gray-5;
+    
+    .companies{
+        padding-bottom:$pd-2;
+        .companies-text{
+            justify-content: center;
+            padding-top:16px;
+        }
+        .companies-logo{
+            justify-content: space-around;
+            padding-top:32px;
+            flex-wrap: wrap;
+        }
+    }
+    .partner-non-student{
+       
+            margin:auto;
+        display: flex;
+        justify-content: space-around;
+        .partner-non-student__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding:0 70px;
+            margin-bottom: 20px;
+            &:first-child{
+                border-right: 1px solid $color-gray-3 ;
+                
+            }
+            span{
+                display: inline-block;
+                text-align: center;
+                margin-top:15px;
+            }
+            span:not(:nth-child(2)){
+                cursor: pointer;
+            }
+            span:first-child{
+                @include styleText($color-black-0,$fs-2,$fw-bold-0);
+            }
+        }
+    }
+}

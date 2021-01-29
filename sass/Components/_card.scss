@@ -1,0 +1,54 @@
+.card {
+    cursor: pointer;
+    &:hover .card-img-top{
+        opacity:.5;
+    }
+    &:hover .card-body{
+        box-shadow: 0 2px 8px 2px rgba(20,23,28,.15);
+    }
+    .card-img{
+        background-color:$color-black-0 ;
+    }
+    .card-body{
+        padding: 15px $pd-1;
+        box-shadow: 0 0 1px 1px rgba(20,23,28,.1);
+        .card-title {
+            @include hiddenText(2);
+            @include styleText($color-black-0, $fs-0, $fw-bold-1);
+        }
+        .card-text {
+            @include hiddenText(1);
+            @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+        }
+        .card-rating {
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
+            font-size: $fs-1;
+            i {
+                color: $color-yellow;
+            }
+            span:first-of-type {
+                padding: 0 10px;
+                color: $color-black-light;
+            }
+            span:last-child {
+                font-size: 12px;
+            }
+        }
+        .card-price {
+            display: flex;
+            justify-content: flex-end;
+            del {
+                @include styleText($color-black-0, $fs-1, $fw-normal);
+                align-self: center;
+                padding-right: $pd-1;
+            }
+            b {
+                @include styleText($color-black-0, $fs-2 -2, $fw-bold-1);
+            }
+        }
+    }
+}

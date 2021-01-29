@@ -1,0 +1,94 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin styleButton($bg-color, $border-color, $pd-y, $pd-x, $radius) {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    padding: $pd-y $pd-x;
+    border-radius: $radius;
+    transition: 0.5s;
+    // &:hover{
+    //     nhung thay doi cua hover
+    // }
+}
+@mixin styleButtonHover($bg-color, $color, $bd-color) {
+    background-color: $bg-color;
+    color: $color;
+    border-color: $bd-color;
+}
+@mixin styleInput($bg-color, $bd-color, $py, $px) {
+    background-color: $bg-color;
+    border: 1px solid $bd-color;
+    padding: $py $px;
+    border-radius: 0;
+}
+@mixin styleInputFocus($bg-color, $bd-color) {
+    &:focus {
+        background-color: $bg-color;
+        border: 1px solid $bd-color;
+        box-shadow: none;
+    }
+}
+@mixin styleButtonInput($bg-color, $color, $bg-color-hover, $color-hover) {
+    background-color: $bg-color;
+    color: $color;
+    border: 1px solid $bg-color;
+    border-radius: 0;
+    &:hover {
+        background-color: $bg-color-hover;
+        color: $color-hover;
+        border-color: $bg-color-hover;
+    }
+}
+@mixin hiddenText($line) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+@mixin buttonPrevCarousel($top,$left,$width,$height) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+    border-radius: 50% !important;
+    background-color: $color-white-0 !important;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+}
+@mixin buttonNextCarousel($top,$right,$width,$height) {
+    position: absolute;
+    top: $top;
+    right:$right;
+    width: $width;
+    height: $height;
+    border-radius: 50% !important;
+    background-color: $color-white-0 !important;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+}
+
+// $screen ten man hinh
+@mixin reponsive($screen) {
+    // Lấy giá trị dựa vào tên màn hình
+    // Kiểm tra tên màn hình có hợp lệ ko => kiểm tra tên có tồn tại trong biến breakpoints
+
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        // hợp lệ
+        // $value chua kich thuoc man hinh lay dc
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        // không hợp lệ
+        @warn "man hinh khong ton tai";
+    }
+}

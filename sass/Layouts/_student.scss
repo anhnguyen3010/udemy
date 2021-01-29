@@ -1,0 +1,43 @@
+.ude-students {
+    .student-title {
+        @include styleText($color-black-light, $fs-2 - 1, $fw-normal);
+        padding-left: 15px;
+    }
+    .owl-carousel {
+        .owl-prev{
+        @include buttonPrevCarousel(23%,-1%,40px,40px);
+            &:focus {
+                outline: none;
+            }
+            span {
+                text-align: center;
+                @include styleText($color-blue, $fs-4, $fw-bold-1);
+                line-height: 30px;
+                display: inline-block;
+                transform: translateX(-2px);
+            }
+        }
+        .owl-next {
+            @include buttonNextCarousel(25%,-1%,40px,40px);
+            span {
+                text-align: center;
+                @include styleText($color-blue, $fs-4, $fw-bold-1);
+                line-height: 30px;
+                display: inline-block;
+                transform: translateX(2px);
+            }
+        }
+    }
+}
+@include reponsive("medium") {
+    .ude-students {
+        .owl-carousel {
+            .owl-prev {
+                top: 34%;
+            }
+            .owl-next {
+                top: 34%;
+            }
+        }
+    }
+}

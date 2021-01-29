@@ -1,0 +1,29 @@
+.ude-btnWhite{
+    @include styleText($color-gray-4, $fs-0, $fw-bold-1);
+    @include styleButton($color-white-0, $color-gray-4,$pd-1 + 1, $pd-1 + 2, $border-radius);
+    &:hover{
+        @include styleButtonHover($color-white-0, $color-black-0,$color-black-0);
+    }
+}
+.ude-btnRed{
+    @include styleText($color-white-0, $fs-0, $fw-bold-1);
+    @include styleButton($color-red-0, $color-red-0, $pd-1 + 1, $pd-1 + 2, $border-radius);
+    &:hover{
+        @include styleButtonHover($color-red-2, $color-white-0, $color-gray-4);
+    }
+}
+.inputHeader{
+    @include styleInput($color-white-cream,$color-white-cream,$pd-1, $pd-1 + 2);
+    @include styleInputFocus($color-white-0,#8a92a3);
+}
+.buttonInputHeader{
+    @include styleButtonInput($color-white-cream,$color-red-0, $color-red-0, $color-white-0);
+}
+
+.inputCarousel{
+    @include styleInput($color-white-0,$color-white-0,$pd-1 + 1, $pd-2 - 3);
+    @include styleInputFocus($color-white-0,$color-white-0);
+}
+.buttonInputCarousel{
+    @include styleButtonInput($color-white-0,$color-red-0, $color-red-0, $color-white-0);
+}

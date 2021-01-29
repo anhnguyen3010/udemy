@@ -1,0 +1,51 @@
+.ude-categories {
+
+    .catagories-title{
+        @include styleText($color-black-0, $fs-3,$fw-bold-1);
+        padding-left: 30px;
+        margin:0 auto;
+    }
+    .categories-body {
+
+        margin:0 auto;
+        width:100%;
+        .categories-item {
+            cursor: pointer;
+            margin:10px 0;
+            padding:15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            &::before,
+            &::after {
+                content:"";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.2s ease;
+            }
+            &::after {
+                opacity: 0;
+                box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15);
+            }
+            &::before{
+                opacity:1;
+                box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+                0 3px 1px 0  rgba(20, 23, 28, 0.1);
+            }
+            &:hover::after{
+                opacity:1;
+            }
+            span{
+                padding-right:16px;
+                @include styleText(#14171c, $fs-0,$fw-normal);
+            }
+            span:first-child{
+                font-size: 24px;
+                font-style: normal;
+            }
+        }
+    }
+}

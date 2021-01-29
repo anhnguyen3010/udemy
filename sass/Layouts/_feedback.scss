@@ -1,0 +1,63 @@
+.ude-feedback{
+    background-color: $color-gray-5;
+    padding:32px 0;
+    .feedback-carousel{
+        padding-top: $pd-2;
+        .feedback-list{
+            position:relative;
+            
+            .feedback-item{
+                padding:32px;
+                background-color: $color-white-0;
+                box-shadow: 0 1px 3px 0 rgba(20,23,28,.15);
+                .card-top{
+                    display:flex;
+                    align-items:center;
+                    .card-img{
+                        display: block;
+                        width: 64px;
+                        height:64px;
+                        border-radius: 50%;
+                    }
+                    .card-name{
+                        padding-left:$pd-2;
+                        @include styleText($color-black-0,$fs-0 + 1,$fw-bold-1);
+                    }
+                }
+                .card-bottom{
+                    padding-top:$pd-2;
+                }
+            }
+        }
+        .owl-nav{
+            .owl-prev{
+                @include buttonPrevCarousel(25%,-1%,47px,47px);
+                &:focus{
+                    outline:none;
+                }
+                span{
+                    text-align: center;
+                    @include styleText($color-blue, $fs-4, $fw-bold-1);
+                    line-height: 30px;
+                    display: inline-block;
+                    transform: translateX(-2px);
+                }
+            }
+            .owl-next{
+                @include buttonNextCarousel(25%,-1%,47px,47px);
+                &:focus{
+                    outline:none;
+                }
+                span{
+                    text-align: center;
+                    @include styleText($color-blue, $fs-4, $fw-bold-1);
+                    line-height: 30px;
+                    display: inline-block;
+                    transform: translateX-(1px);
+                }
+            }
+           
+        }
+    }
+}
+// Reponsive

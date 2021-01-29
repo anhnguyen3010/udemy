@@ -1,0 +1,90 @@
+.header__left {
+    display: flex;
+    align-items: center;
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+    .navbar-brand {
+        img {
+            width: 110px;
+        }
+    }
+    .header__cate {
+        height: 45px;
+        padding: $fs-1 - 1 $fs-0;
+    }
+    // flex-grow
+    .header__form {
+        flex-grow: 1;
+
+        .form-control {
+            border-radius: 0;
+            height: 44px;
+            border-right-color: $color-white-cream;
+            background-clip: border-box;
+            transition: .5s;
+            &:focus {
+                border-right-color: $color-white-0;
+            }
+            &:focus + .input-group-append .input-group-text {
+                @include styleButtonInput($color-white-0, $color-red-0, $color-red-0, $color-white-0);
+                border: 1px solid #8a92a3;
+                border-left-color:  $color-white-cream;
+            }
+        }
+
+        .input-group-text {
+            padding: $pd-1 + 1 $pd-1 + 2;
+            border-radius: 0;
+            transition: .5s;
+        }
+    }
+}
+
+.header__right {
+    height: 100%;
+    align-items: center;
+    .nav-item {
+        // &:nth-child(3) {
+        //     .nav-link {
+        //         padding: 0 20px;
+        //         line-height: 40px;
+        //     }
+        // }
+        .nav-link {
+            height: 45px;
+            padding: $fs-1 - 1 $fs-0;
+            text-decoration: none;
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+        }
+    }
+    .ude-teach {
+        .nav-link {
+            border-right: 1px solid $color-gray-6;
+        }
+    }
+}
+
+// Reponsive
+@include reponsive("extra-large") {
+    .header__right {
+        .ude-business,
+        .ude-teach {
+            display: none;
+        }
+    }
+}
+
+@include reponsive("medium") {
+    .header__left {
+        .header__form {
+            display: none;
+        }
+        .header__cate {
+            display: none;
+        }
+    }
+    .header__right {
+        .nav-item:last-child {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+.ude-course {
+    .course-left {
+        width: 95%;
+        height: 95%;
+        margin: 10px auto;
+
+        background-color: $color-gray-5;
+        .course-intro {
+            text-align: left;
+            padding-left: 30px;
+
+            h3 {
+                @include styleText($color-black-0, $fs-2, $fw-bold-1);
+            }
+        }
+    }
+    .course-tab {
+        .nav-tabs {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+            justify-content: space-around;
+            .nav-item {
+                .nav-link {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    border: none;
+                    color: $color-black-0;
+                    position: relative;
+                    &:hover {
+                        color: $color-blue;
+                    }
+                    &:after {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background-color: $color-blue;
+                    }
+                    &.active:after {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .tab-content {
+        & > .tab-pane {
+            visibility: hidden;
+            height: 0px;
+            overflow: hidden;
+        }
+        & > .active {
+            visibility: visible;
+            height: auto;
+            overflow: visible;
+        }
+        .owl-carousel {
+            .owl-prev{
+                @include buttonPrevCarousel(28%,-4%,47px,47px);
+                &:focus {
+                    outline: none;
+                }
+                span {
+                    text-align: center;
+                    @include styleText($color-blue, $fs-4, $fw-bold-1);
+                    line-height: 30px;
+                    display: inline-block;
+                    transform: translateX(-2px);
+                }
+            }
+            .owl-next {
+                @include buttonNextCarousel(28%,-4%,47px,47px);
+                &:focus {
+                    outline: none;
+                }
+                span {
+                    text-align: center;
+                    @include styleText($color-blue, $fs-4, $fw-bold-1);
+                    line-height: 30px;
+                    display: inline-block;
+                    transform: translateX(2px);
+                }
+            }
+        }
+    }
+}
+// reponsive
+@include reponsive("large") {
+    .course-intro {
+        display: none;
+    }
+}
+@include reponsive("medium") {
+    .course-tab {
+        .nav-tabs {
+            flex-direction: column;
+        }
+    }
+    .ude-course {
+        .tab-content {
+            .owl-carousel {
+                .owl-prev {
+                    width: 40px;
+                    height: 40px;
+                    top: 35%;
+                    left: -5%;
+                }
+                .owl-next {
+                    top: 20%;
+                    width: 40px;
+                    height: 40px;
+                    top: 35%;
+                    right: -5%;
+                }
+            }
+        }
+    }
+}
+@include reponsive("small") {
+    .ude-course {
+        .tab-content {
+            .owl-carousel {
+                .owl-prev {
+                    width: 40px;
+                    height: 40px;
+                    top: 54%;
+                    left: -6%;
+                }
+                .owl-next {
+                    top: 20%;
+                    width: 40px;
+                    height: 40px;
+                    top: 54%;
+                    right: -6%;
+                }
+            }
+        }
+    }
+}

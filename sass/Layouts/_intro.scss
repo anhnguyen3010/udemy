@@ -1,0 +1,34 @@
+.ude-intro{
+    background: linear-gradient(to right,#701b52,#e75052);
+    .intro-item{
+        align-items:center;
+        text-align: center;
+        .iconIntro{
+            padding-right: $pd-2 - 4;
+        }
+        .intro-text{
+            h3{
+                @include styleText($color-white-0, $fs-2 - 3, $fw-bold-1);
+            }
+            span{
+                @include styleText($color-white-0, $fs-2 - 5, $fw-normal);
+                line-height: $line-height-0;
+            }
+        }
+    }
+}
+// Reponsive
+@include reponsive('extra-large'){
+    .ude-intro{
+        .intro-item{
+            .iconIntro{
+                display:none;
+            }
+        }
+    }
+}
+@include reponsive('medium'){
+    .ude-intro{
+       display: none;
+    }
+}

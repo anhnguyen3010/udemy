@@ -1,0 +1,35 @@
+// Chứa đường dẫn đến các files con
+//KHông chứa code style css
+
+//Khai báo biến: Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+// Vendor
+
+//Base
+@import './Base/reset';
+@import './Base/customize';
+
+// Components
+@import './Components/card';
+@import './Components/icon';
+@import './Components/button';
+
+// Layouts
+@import './Layouts/companies';
+@import './Layouts/feedback';
+@import './Layouts/categories';
+@import './Layouts/banner';
+@import './Layouts/student';
+@import './Layouts/course';
+@import './Layouts/intro';
+@import './Layouts/header';
+@import './Layouts/carousel';
+@import './Layouts/footer';
+@import './Layouts/reponsive'
+
+// Pages
+
+//Theme
+
